@@ -10,27 +10,6 @@ class Person {
     speak() {
         return `Hello my name is ${this.name}, I am from ${this.location}`;
     }
-    demo(subject) {
-        return "Today we are learning about " + subject
-    }
-    grade(student, subject) {
-        return student + " recieves a perfect score on " + subject
-    }
-    listsSubjects() {
-        this.favSubjects.map(nerd => console.log(nerd));
-    }
-    PRAssignment(subject) {
-        return `${this.name} has submitted a PR for ${subject}`
-    }
-    sprintChallenge(subject){
-        return `${this.name} has begun the sprint challenge one ${subject}`
-    }
-    standUP(slackname){
-        return `${this.name} announces to ${slackname}, @channel standy times !!`
-    }
-    debugsCode(student, subject){
-        return `${this.name} debugs ${student}'s code on ${subject}`
-    }
 }
 
 //Build Instructor Class
@@ -42,7 +21,12 @@ class Instructor extends Person {
         this.favLanguage = about.favLanguage
         this.catchPhrase = about.catchPhrase
     }
-
+    demo(subject) {
+        return "Today we are learning about " + subject
+    }
+    grade(student, subject) {
+        return student + " recieves a perfect score on " + subject
+    }
 }
 ///Instructor 🐱
 
@@ -63,17 +47,18 @@ class Student extends Person {
         this.previousBackground = child.previousBackground
         this.className = child.className
         this.favSubjects = child.favSubjects
-        this
+        this.grade = child.grade
     }
-    // listsSubjects() {
-    //     this.favSubjects.map(nerd => console.log(nerd));
-    // }
-    // PRAssignment(subject) {
-    //     return `${this.name} has submitted a PR for ${subject}`
-    // }
-    // sprintChallenge(subject){
-    //     return `${this.name} has begun the sprint challenge one ${subject}`
-    // }
+
+    listsSubjects() {
+        this.favSubjects.map(nerd => console.log(nerd));
+    }
+    PRAssignment(subject) {
+        return `${this.name} has submitted a PR for ${subject}`
+    }
+    sprintChallenge(subject){
+        return `${this.name} has begun the sprint challenge one ${subject}`
+    }
 }
 
 ///Students 💥
@@ -86,7 +71,8 @@ const kenya = new Student({
     specialty: 'following patterns',
     favLanguage: 'JavaScript, Python',
     catchPhrase: "Huh?",
-    favSubjects: ['Javascript', 'HTML', 'CSS', 'Art']
+    favSubjects: ['Javascript', 'HTML', 'CSS', 'Art'],
+    grade: '99.9',
 });
 
 
@@ -99,12 +85,12 @@ class ProjectManagers extends Instructor {
         this.favInstructor = lifesaver.favInstructor
 
     }
-    // standUP(slackname){
-    //     return `${this.name} announces to ${slackname}, @channel standy times !!`
-    // }
-    // debugsCode(student, subject){
-    //     return `${this.name} debugs ${student}'s code on ${subject}`
-    // }
+    standUP(slackname){
+        return `${this.name} announces to ${slackname}, @channel standy times !!`
+    }
+    debugsCode(student, subject){
+        return `${this.name} debugs ${student}'s code on ${subject}`
+    }
 }
 
 /// Project Managers 🔥🔥🔥
@@ -156,7 +142,7 @@ const pat = new ProjectManagers({
 console.log(pat.age)//38
 console.log(mary.speak());//Hello my name is Mary, I am from NewYork
 console.log(dan.demo("Javascript"))//Today we are learning about Javascript
-console.log(kenya.grade("Kenya", "Javascript"))//Kenya recieves a perfect score on Javascript
+console.log(dan.grade("Kenya", "Javascript"))//Kenya recieves a perfect score on Javascript
 console.log(kenya.listsSubjects());
 console.log(kenya.PRAssignment("Javascript-IV"))
 console.log(kenya.sprintChallenge("JS"))
