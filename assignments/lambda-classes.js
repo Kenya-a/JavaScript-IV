@@ -10,6 +10,12 @@ class Person{
   speak() {
     return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
+  demo(subject) {
+    return "Today we are learning about " + subject
+}
+    grade(student, subject) {
+    return student + " recieves a perfect score on " + subject
+}
 }
 
 //Build Instructor Class
@@ -22,12 +28,19 @@ class Instructor extends Person{
       this.catchPhrase = about.catchPhrase  
     }
 
-    // demo() {
-    //     return `Today we are learning about ${this.specialty}`
-    // }
   }
+  ///Instructor 🐱
 
-  //Build Student Class
+  const dan = new Instructor({
+    name: 'Dan',
+    age:  '102',
+    location: 'Space',
+    specialty: 'Everything',
+    favLanguage:'All of them',
+    catchPhrase: 'Adding a few minutes'
+})
+
+  //Build Student Class 
 
   class Student extends Person{
       constructor(child){
@@ -37,7 +50,21 @@ class Instructor extends Person{
           this.favSubjects = child.favSubjects
           this
       }
+      
   }
+
+  ///Students 💥
+const kenya = new Student({
+  name: 'Kenya',
+  age: 'ancient',
+  gradClassName: 'WEB21',
+  favInstructor: 'you',
+  location: 'Illinois',
+  specialty: 'following patterns',
+  favLanguage: 'JavaScript, Python',
+  catchPhrase: "Huh?",
+ });
+
 
   //Build Project Manager
 
@@ -49,20 +76,9 @@ class Instructor extends Person{
 
       }
   }
-  ///Instructor 🐱
-
-  const dan = new Instructor({
-      name: 'Dan',
-      age:  '102',
-      location: 'Space',
-      specialty: 'Everything',
-      favLanguage:'All of them',
-      catchPhrase: 'Adding a few minutes'
-  })
-
 
   /// Project Managers 🔥🔥🔥
-const marguel = new ProjectManager({
+const marguel = new ProjectManagers({
   name: 'Marguel',
   age: 'Maybe 26',
   gradClassName: 'WEBPT2',
@@ -73,7 +89,7 @@ const marguel = new ProjectManager({
   catchPhrase: "Practice Flex Zombies !!!",
  });
 
- const brandon = new ProjectManager({
+ const brandon = new ProjectManagers({
     name: 'Brandon',
     age: '34',
     gradClassName: 'WEB18',
@@ -84,7 +100,7 @@ const marguel = new ProjectManager({
     catchPhrase: "You shall not pass!",
   });
 
-  const mary = new ProjectManager({
+  const mary = new ProjectManagers({
     name: 'Mary',
     age: '24',
     gradClassName: 'WEB18',
@@ -95,7 +111,7 @@ const marguel = new ProjectManager({
     catchPhrase:  "That looks AWESOME",
   });
 
-  const pat = new ProjectManager({
+  const pat = new ProjectManagers({
     name: 'Pat',
     age: '38',
     gradClassName: 'WEB18',
@@ -105,3 +121,9 @@ const marguel = new ProjectManager({
     favLanguage: 'JavaScript',
     catchPhrase: 'lets google that together.'
   });
+
+
+  console.log(pat.age)//38
+  console.log(mary.speak());//Hello my name is Mary, I am from NewYork
+  console.log(dan.demo("Javascript"))//Today we are learning about Javascript
+  console.log(kenya.grade("Kenya","Javascript"))//Kenya recieves a perfect score on Javascript

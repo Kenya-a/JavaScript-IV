@@ -95,9 +95,9 @@ const fred = new Instructor({
   * `className` i.e. CS132
   * `favSubjects`. i.e. an array of the student's favorite subjects ['Html', 'CSS', 'JavaScript']
 * Student has the following methods:
-  * `listsSubjects` a method that logs out all of the student's favoriteSubjects one by one.
+  <!-- * `listsSubjects` a method that logs out all of the student's favoriteSubjects one by one.
   * `PRAssignment` a method that receives a subject as an argument and logs out that the `student.name has submitted a PR for {subject}`
-  * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
+  * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}` -->
 
 #### Project Manager
 
@@ -106,9 +106,9 @@ const fred = new Instructor({
 * ProjectManagers have the following unique props:
   * `gradClassName`: i.e. CS1
   * `favInstructor`: i.e. Sean
-* ProjectManagers have the following Methods:
+<!-- * ProjectManagers have the following Methods:
   * `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-  * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
+  * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}` -->
 
 #### Stretch Problem
 
